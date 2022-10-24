@@ -13,14 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('failed_jobs', function (Blueprint $table) {
-            $table->id();
-            $table->string('uuid')->unique();
-            $table->text('connection');
-            $table->text('queue');
-            $table->longText('payload');
-            $table->longText('exception');
-            $table->timestamp('failed_at')->useCurrent();
+        Schema::create('TI_SERVICIOS', function (Blueprint $table) {
+            $table->bigIncrements('PK_SERVICIO');
+            $table->string("NOMBRE");
+            $table->string("DESCRIPCION");
+            $table->integer('FK_COORDINADOR')->references('PK_COORDINADOR')->on('TI_COORDINADOR');
+            
         });
     }
 
@@ -31,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('failed_jobs');
+        Schema::dropIfExists('TI_SERVICIOS');
     }
 };
