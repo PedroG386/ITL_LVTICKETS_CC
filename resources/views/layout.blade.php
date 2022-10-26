@@ -17,14 +17,17 @@
       <nav class="navbar-vertical navbar">
         <div class="nav-scroller">
             <!-- Brand logo -->
-            <a class="navbar-brand" href="#">
-                <img src="#" alt="Logotipo CC" />
+            <a class="navbar-brand" href="#" style="border-bottom: 2px solid white; color:white;">
+             
+                <img src="https://i.imgur.com/2BRQNTS.png" height="60" alt="Logotipo CC" />  Tec de León
+               
+
             </a>
             <!-- Navbar nav -->
             <ul class="navbar-nav flex-column" id="sideNavbar">
                 <li class="nav-item">
                     <a class="nav-link has-arrow @@if (context.page ===  'dashboard') { active }" href="#">
-                        <i data-feather="home" class="nav-icon icon-xs me-2"></i>  Tickets CC
+                        <i data-feather="home" class="nav-icon icon-xs me-2"></i>  Administaración de ticktes
                     </a>
     
                 </li>
