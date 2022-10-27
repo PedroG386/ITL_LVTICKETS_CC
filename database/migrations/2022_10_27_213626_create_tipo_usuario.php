@@ -13,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('TI_SERVICIOS', function (Blueprint $table) {
-            $table->bigIncrements('PK_SERVICIO');
+        Schema::create('TI_TIPO_USUARIO', function (Blueprint $table) {
+            $table->bigIncrements('PK_TIPO_USUARIO');
             $table->string("NOMBRE");
             $table->string("DESCRIPCION");
-            $table->integer('FK_COORDINADOR')->references('PK_COORDINADOR')->on('TI_COORDINADOR');
             
         });
     }
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('TI_SERVICIOS');
+        Schema::dropIfExists('TI_TIPO_USUARIO');
     }
 };

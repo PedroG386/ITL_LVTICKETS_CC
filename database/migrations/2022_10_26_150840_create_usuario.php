@@ -13,16 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('TI_COORDINADOR', function (Blueprint $table) {
-            $table->bigIncrements('PK_COORDINADOR');
+        Schema::create('TI_USUARIOS', function (Blueprint $table) {
+            $table->bigIncrements('PK_USUARIO');
             $table->string('NOMBRE');
-            $table->string('APELLIDO_PARTERNO');
+            $table->string('APELLIDO_PATERNO');
             $table->string('APELLIDO_MATERNO');
-            $table->string('TELEFONO');
+            $table->string('NO_CONTROL')->nullable();
             $table->string('CORREO');
-            $table->time('HORA_ENTRADA');
-            $table->time('HORA_SALIDA');
-            
+            $table->string('TELEFONO');
+            $table->string('CARRERA')->nullable();
+            $table->integer('FK_AREA')->references('PK_CARRERA')->on('TI_CARRERA');
         });
     }
 
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('TI_COORDINADOR');
+        Schema::dropIfExists('TI_USUARIOS');
     }
 };
