@@ -24,7 +24,7 @@
             <ul class="navbar-nav flex-column" id="sideNavbar">
                 <li class="nav-item">
                     <a class="nav-link has-arrow @@if (context.page ===  'dashboard') { active }" href="#">
-                        <i data-feather="home" class="nav-icon icon-xs me-2"></i>  Tickets CC
+                        <i data-feather="home" class="nav-icon icon-xs me-2"></i> <strong> Tickets CC </strong> 
                     </a>
     
                 </li>
@@ -61,10 +61,7 @@
         <div class="header @@classList">
           <!-- header -->
           <nav class="navbar-classic navbar navbar-expand-lg">
-            <a id="nav-toggle" href="#"><i
-                data-feather="menu"
-        
-                class="nav-icon me-2 icon-xs"></i></a>
+            <a onclick="toggle()" id="nav-toggle" href="#"><i class="fa-solid fa-bars"></i></a>
             <div class="ms-lg-3 d-none d-md-none d-lg-block">
               <!-- Form -->
               <form class="d-flex align-items-center">
@@ -74,12 +71,7 @@
             <!--Navbar nav -->
             <ul class="navbar-nav navbar-right-wrap ms-auto d-flex nav-top-wrap">
               <li class="dropdown stopevent">
-                <a class="btn btn-light btn-icon rounded-circle indicator
-                  indicator-primary text-muted" href="#" role="button"
-                  id="dropdownNotification" data-bs-toggle="dropdown" aria-haspopup="true"
-                  aria-expanded="false">
-                  <i class="icon-xs" data-feather="bell"></i>
-                </a>
+                
                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end"
                   aria-labelledby="dropdownNotification">
                   <div>
@@ -88,7 +80,7 @@
                       <p class="mb-0 text-dark fw-medium fs-4">Notifications</p>
                       <a href="#" class="text-muted">
                         <span>
-                          <i class="me-1 icon-xxs" data-feather="settings"></i>
+                          <i class="fa-solid fa-bell"></i>
                         </span>
                       </a>
                     </div>
@@ -161,6 +153,20 @@
   <script src="{{asset('assets/libs/jquery/dist/jquery.js')}}"></script>
   <script src=" {{asset('assets/libs/bootstrap/dist/js/bootstrap.bundle.js')}} "></script>
   <script src=" {{asset('assets/js/theme.js')}}"></script>
+  <script src="https://kit.fontawesome.com/a10db9b6f8.js" crossorigin="anonymous"></script>
+
+
+  <script type="text/javascript">
+        const divBarra = document.getElementById('db-wrapper');
+        const btn = document.getElementById('nav-toggle');
+      
+        btn.addEventListener('click', toogle())
+
+        function toggle(){
+          divBarra.classList.toggle("toggled")
+        }
+
+  </script>
 
   </body>
  </html>
